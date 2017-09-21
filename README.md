@@ -23,5 +23,4 @@ Before run tests, replace some settings in *tests/settings_default.py* module.
 
 Tests was built with Python Unittest, run the following commands:
 
-    python -m unittest -v tests.test_analyze
-    python -m unittest -v tests.test_clean
+    python -m unittest discover tests
