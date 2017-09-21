@@ -24,11 +24,13 @@ from sdklib.http import HttpSdk
 from sdklib.http.authorization import X11PathsAuthentication
 from sdklib.http.renderers import MultiPartRenderer
 from sdklib.http.response import Api11PathsResponse
+from sdklib.shortcuts import disable_warnings
+disable_warnings()
 
 
 class MetashieldCleanUp(HttpSdk):
     """
-    Metashield Cleanup API class
+    Metashield CleanUp API class
     """
     DEFAULT_HOST = "https://metashieldclean-up.elevenpaths.com"
 
