@@ -16,11 +16,11 @@ Example for cleaning a file.
 
 .. code-block:: python
 
-    import metashield_clean_up
+    from metashield_clean_up.api import MetashieldCleanUp
 
-    api = metashield_clean_up.MetashieldCleanUp("APP_ID_HERE", "SECRET_KEY_HERE")
+    api = MetashieldCleanUp("REPLACE_APP_ID_HERE", "REPLACE_SECRET_KEY_HERE")
     response = api.clean_file(stream, "my_file.pdf")
-    response = api.get_clean_result(response.data["resultId"])
+    response = api.get_clean_result(response.data["cleanId"])
 
 
 Run tests
