@@ -22,7 +22,7 @@ Example for cleaning a file.
 
     api = MetashieldCleanUp("REPLACE_APP_ID_HERE", "REPLACE_SECRET_KEY_HERE")
     with open("file.pdf", "rb") as f:
-        response = api.clean_file(stream, "file.pdf")
+        response = api.clean_file(f.read(), "file.pdf")
 
     clean_id = response.data["cleanId"]
 
