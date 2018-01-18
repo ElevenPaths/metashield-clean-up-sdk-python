@@ -16,11 +16,23 @@ Example for cleaning a file.
 
 .. code-block:: python
 
+    import time
+    import base64
     from metashield_clean_up.api import MetashieldCleanUp
 
     api = MetashieldCleanUp("REPLACE_APP_ID_HERE", "REPLACE_SECRET_KEY_HERE")
-    response = api.clean_file(stream, "my_file.pdf")
-    response = api.get_clean_result(response.data["cleanId"])
+    with open("file.pdf", "rb") as f:
+        response = api.clean_file(f.read(), "file.pdf")
+
+    clean_id = response.data["cleanId"]
+
+    time.sleep(5)  # wait until file is cleaned
+
+    response2 = api.get_clean_result(clean_id)
+    decoded = base64.b64decode(response2.data[clean_id])
+
+    with open("cleanFile.pdf", "w") as f:
+        f.write(decoded)
 
 
 Run tests
